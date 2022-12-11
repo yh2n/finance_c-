@@ -1,3 +1,3 @@
 ## Finance C++
 
-Examples/notes from C++ for finance course
+Lessons/notes from "Learn Finance C++" course.
