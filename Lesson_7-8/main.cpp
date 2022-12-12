@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
     const int kMonthsInYear = 12;
-    const int percent_denominator = 100;
+    const int kPercent_denominator = 100;
 
     double principal = 0.0;
     cout << "Enter the principal amount: ";
@@ -19,7 +19,7 @@ int main() {
     cout << "Enter the interest rate: ";
     cin >> human_interest;
 
-    double interest = divisor(human_interest, percent_denominator);
+    double interest = divisor(human_interest, kPercent_denominator);
 
     int years_of_loan = 0;
     cout << "Enter years of loan: ";
