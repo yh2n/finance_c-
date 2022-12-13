@@ -8,7 +8,16 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
+    // argc: 'argument count' => how many arguments were entered on command line when program started
+    // argv: 'argument vector' => array of pointers to arrays of character objects, e.g: argv[0] name of the program
+    cout << "argc: " << argc << endl;
+    cout << "argv[0]: " << argv[0] << endl;
+
+    for(int i = 0; i < argc; ++i) {
+        cout << "argv[" << i << "]: " << argv[i] << endl;
+    }
+
     double principal = 0.0;
     cout << "Enter the principal amount: ";
     cin >> principal;
@@ -28,9 +37,6 @@ int main() {
 
     double payment = 0.0;
     payment = principal * (month_interest / (1 - (pow(1 + month_interest, - months_of_loan))));
-
-    // if error message: "call to 'pow' is ambiguous" => need to "cast" to make sure 'pow' takes same type of values
-    // payment = principal * (month_interest / (1 - (pow((double)1 + month_interest, - (double)months_of_loan))));
 
     cout << "Payment: " << setiosflags(ios::fixed) << setprecision(2) << payment << endl;
 
