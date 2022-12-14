@@ -8,11 +8,18 @@
 
 using namespace std;
 
+enum AmortizeProgram {
+    kLoanPrincipal = 1,
+    kInterestRate = 2,
+    kYearsOfLoan = 3
+};
+
 int main(int argc, char *argv[]) {
 
     double principal = 0.0;
     double human_interest = 0.0;
     int years_of_loan = 0;
+
     if(argc == 1) {
         cout << "Enter the principal amount: ";
         cin >> principal;
@@ -25,16 +32,16 @@ int main(int argc, char *argv[]) {
     } else {
         // atof interprets string as floating point and returns value as double 
         // https://www.programiz.com/cpp-programming/library-function/cstdlib/atof
-        principal = atof(argv[1]);
-        human_interest = atof(argv[2]);
+        principal = atof(argv[kLoanPrincipal]);
+        human_interest = atof(argv[kInterestRate]);
         // atoi turns string to int
-        years_of_loan = atoi(argv[3]);
+        years_of_loan = atoi(argv[kYearsOfLoan]);
     }
 
     cout << "Loan principal: " << principal << endl;
     cout << "Interest rate " << human_interest << endl;
     cout << "Time period " << years_of_loan << " year(s)" << endl;
-    
+
     double interest = divisor(human_interest, kPercentDenominator);
     double month_interest =  divisor(interest, kMonthsInYear);
     long months_of_loan = multiplier(years_of_loan, kMonthsInYear);
