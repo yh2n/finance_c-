@@ -8,11 +8,13 @@
 
 using namespace std;
 
+
 enum AmortizeProgram {
     kLoanPrincipal = 1,
     kInterestRate = 2,
     kYearsOfLoan = 3
 };
+
 
 int main(int argc, char *argv[]) {
 
