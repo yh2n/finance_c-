@@ -2,6 +2,16 @@
 
 using namespace std;
 
+void print_out_name(char input_string[]) {
+    for(int i = 0; input_string[i] != '\0'; ++i) {
+        cout << input_string[i];
+    }
+    cout << endl;
+}
+
+void print_out_name(string input_string) {
+    cout << input_string << endl;
+}
 
 int main() {
     const int kSizeFive = 5;
@@ -75,6 +85,25 @@ int main() {
         }
         cout << endl;
     };
+
+    // Single quotes for char
+    // C++ 11 way of initializing char a_character {'x'};
+    char a_character = 'x';
+    cout << endl << "a_character: >" << a_character << "<" << endl;
+
+    // '\0' flag to stop our loop. Represents a single character
+    char first_name[] = {'A', 'n', 'd', 'y', '\0'};
+    print_out_name(first_name);
+
+    // Implicitly read as 'char second_name[6] = "James";' since '\0' is assumed...
+    // char second_name[] = "James" : string array
+    char second_name[] = "James";
+    print_out_name(second_name);
+
+    // String type => print_out_name(third_name) would throu an error if we didn't overload 
+    // the function
+    string third_name = "Duncan";
+    print_out_name(third_name);
 
     return 0;
 } 
