@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// returns a reference
 int& max_num(int& firstN, int& secondN) {
     if(firstN > secondN) {
         return firstN;
