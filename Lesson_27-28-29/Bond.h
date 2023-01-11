@@ -2,6 +2,10 @@ class Bond {
     public:
         Bond();
 
+        Bond(double, double, double, char);
+
+        double getBondPrice();
+
         void setPrincipal(double);
         double getPrincipal();
 

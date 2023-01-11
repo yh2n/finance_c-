@@ -7,11 +7,24 @@ using namespace std;
 Bond::Bond() {
     cout << "I have created a default Bond" << endl;
 
-    principal = 100.0;
-    rate = 0.1;
-    years_to_maturity = 1.0;
-    payment_type = 'A';
-}
+    setPrincipal(100.0);
+    setRate(0.1);
+    setYearsToMaturity(1.0);
+    setPaymentType('A');
+};
+
+Bond::Bond(double prin, double rt, double ytm, char p_type) {
+    cout << "I have created a tailored Bond" << endl;
+
+    setPrincipal(prin);
+    setRate(rt);
+    setYearsToMaturity(ytm);
+    setPaymentType(p_type);
+};
+
+double Bond::getBondPrice() {
+    return 42.0;
+};
 
 void Bond::setPrincipal(double prin) {
     principal = prin;
