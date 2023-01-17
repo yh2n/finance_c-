@@ -18,6 +18,10 @@ Bond::Bond(double prin, double coup, double mkt, double ytm, char p_type) {
     setPaymentType(p_type);
 };
 
+Bond::~Bond() {
+    cout << "Bond program ran last operation" << endl;
+};
+
 double Bond::getBondPrice() {
     double bond_price = 0.0;
     int scaling_factor = 0;

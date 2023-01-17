@@ -3,10 +3,11 @@ class Bond {
         const char kBondAnnualType = 'A';
         const char kBondSemiannualType = 'S';
         const char kBondQuaterlyType = 'Q';
-
         const int kBondInvalidType = 99;
 
         Bond(double, double, double, double, char);
+        // deconstructor
+        ~Bond();
 
         double getBondPrice();
 
