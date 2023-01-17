@@ -7,6 +7,10 @@ using namespace std;
 Bond::Bond(double prin, double coup, double mkt, double ytm, char p_type) {
     cout << "I have created a tailored Bond" << endl;
 
+    if((p_type != kBondAnnualType) && (p_type != kBondSemiannualType) && (p_type != kBondQuaterlyType)) {
+        throw kBondInvalidType;
+    }
+
     setPrincipal(prin);
     setCouponRate(coup);
     setMarketRate(mkt);

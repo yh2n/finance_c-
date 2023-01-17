@@ -4,6 +4,8 @@ class Bond {
         const char kBondSemiannualType = 'S';
         const char kBondQuaterlyType = 'Q';
 
+        const int kBondInvalidType = 99;
+
         Bond(double, double, double, double, char);
 
         double getBondPrice();

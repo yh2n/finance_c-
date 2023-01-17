@@ -4,10 +4,16 @@
 using namespace std;
 
 // int main(int argc, const char * argv[]) {
-//     Bond complex_bond(7000, 0.07, 0.15, 12, 'S');
+//     try {
 
-//     double external_bond_price = complex_bond.getBondPrice();
-//     cout << "'External' bond price: " << external_bond_price << endl;
+//         Bond complex_bond(7000, 0.07, 0.15, 12, 'A');
+
+//         double external_bond_price = complex_bond.getBondPrice();
+//         cout << "'External' bond price: " << external_bond_price << endl;
+//     }
+//     catch(int error) {
+//         cout << "Bond creation failed" << endl;
+//     }
 
 //     return 0;
 // }
@@ -34,10 +40,15 @@ int main(int argc, const char * argv[]) {
     cout << "Payment type('A'nnual, 'S'emi-annual, 'Q'uaterly): " << endl;
     cin >> pmt_type;
 
+    try {
     Bond complex_bond(pcp, cp_rate, mkt_rate, yrs_to_mat, pmt_type);
 
     double external_bond_price = complex_bond.getBondPrice();
     cout << "'External' bond price: " << external_bond_price << endl;
+    }
+    catch(int error) {
+        cout << "Bond creation failed, ERROR: " << error << endl;
+    }
 
     return 0;
 } 
