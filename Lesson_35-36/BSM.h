@@ -4,8 +4,6 @@ class BSM {
     public: 
         BSM(float, float, float, float, float, long, long); 
 
-        ~BSM() {} 
-
         float getBsmAsset();
         float getBsmStrike();
         float getBsmGrowth();
@@ -32,4 +30,4 @@ class BSM {
 
         double bsm_call_price;
         double bsm_put_price;
-}
+};
