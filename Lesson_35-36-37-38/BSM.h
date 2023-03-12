@@ -4,6 +4,8 @@ class BSM {
     public: 
         BSM(float, float, float, float, float, long, long); 
 
+        ~BSM();
+
         float getBsmAsset();
         float getBsmStrike();
         float getBsmGrowth();
