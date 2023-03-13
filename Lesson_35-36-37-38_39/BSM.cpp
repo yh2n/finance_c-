@@ -38,10 +38,33 @@ void BSM::logNormalRandomWalk() {
                 rn() + rn() + rn() +
                 rn() + rn() + rn() - 6
             ));
-            cout <<"Step "<< j << ", asset: " << ast << endl;
+            
         }
-        
+
+        cout << "Final asset, this run " << ast << endl;
+        if(ast > getBsmStrike()) {
+            call_payoff_pot += (ast - getBsmStrike());
+        }
+        else if(ast < getBsmStrike()) {
+            put_payoff_pot += (getBsmStrike() - ast);
+        }
+
+        cout<< "Call payoff pot: " << call_payoff_pot << endl;
+        cout<< "Put payoff pot: " << put_payoff_pot << endl;
+
+        if((i % 10000) == 0) {
+            cout << "." << flush;
+            if((i % 10000) == 0) {
+                long i_mess = i / 1000;
+                 cout << i_mess << "k" << flush;
+            }
+        }
     }
+
+    bsm_call_price = call_payoff_pot / getBsmMonteCarloSims();
+    bsm_put_price = put_payoff_pot / getBsmMonteCarloSims();
+
+    return;
 }
 
 double BSM::rn() {
