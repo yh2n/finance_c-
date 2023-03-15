@@ -41,7 +41,7 @@ void BSM::logNormalRandomWalk() {
             
         }
 
-        cout << "Final asset, this run " << ast << endl;
+        // cout << "Final asset, this run " << ast << endl;
         if(ast > getBsmStrike()) {
             call_payoff_pot += (ast - getBsmStrike());
         }
@@ -49,12 +49,12 @@ void BSM::logNormalRandomWalk() {
             put_payoff_pot += (getBsmStrike() - ast);
         }
 
-        cout<< "Call payoff pot: " << call_payoff_pot << endl;
-        cout<< "Put payoff pot: " << put_payoff_pot << endl;
+        // cout<< "Call payoff pot: " << call_payoff_pot << endl;
+        // cout<< "Put payoff pot: " << put_payoff_pot << endl;
 
         if((i % 10000) == 0) {
             cout << "." << flush;
-            if((i % 10000) == 0) {
+            if((i % 100000) == 0) {
                 long i_mess = i / 1000;
                  cout << i_mess << "k" << flush;
             }
