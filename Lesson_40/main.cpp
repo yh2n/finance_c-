@@ -44,13 +44,13 @@ void refBoostBonus(Trader& refTrad) {
 int main(int argc, const char * argv[]) {
     Trader trader(1000000.01);
 
-
     cout << setiosflags(ios::fixed) << setprecision(2);
     cout << "Trader initial bonus: " << trader.getBonus() << endl;
+
     valueBoostBonus(trader);
     cout << "Value, bonus now: " << trader.getBonus() << endl;
 
-    valueBoostBonus(trader);
+    refBoostBonus (trader);
     cout << "Ref, bonus now: " << trader.getBonus() << endl;
 
     return 0;
