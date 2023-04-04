@@ -40,6 +40,17 @@ void refBoostBonus(Trader& refTrad) {
     cout << "After, refTrad: " << refTrad.getBonus() << endl;
     return;
 }
+// it's not an object it's a pointer to an object => two solutions:
+// (*pTrad).getBonus()
+// *pTrad->getBonus()
+
+void pointerBoostBonus(Trader* pTrad) {
+    cout << "Before, pTrad: " << pTrad->getBonus() << endl;
+    pTrad->tripleBonus();
+    cout << "After, pTrad: " << pTrad->getBonus() << endl;
+    return;
+}
+
 
 int main(int argc, const char * argv[]) {
     Trader trader(1000000.01);
@@ -52,6 +63,9 @@ int main(int argc, const char * argv[]) {
 
     refBoostBonus (trader);
     cout << "Ref, bonus now: " << trader.getBonus() << endl;
+
+    pointerBoostBonus (&trader);
+    cout << "Pointer, bonus now: " << trader.getBonus() << endl;
 
     return 0;
 }
