@@ -32,15 +32,20 @@ int AndySportsCar::getCarCount() {
 }
 
 
+void outputCount() {
+    cout << "Count of cars is " << AndySportsCar::getCarCount() << endl;
+}
 int main(int argc, const char * argv[]) {
 
-    cout << "Count of cars is " << AndySportsCar::getCarCount() << endl;
-
+    outputCount();
     AndySportsCar *pSilverCar = new AndySportsCar("Silver");
+    outputCount();
     AndySportsCar *pBlackCar = new AndySportsCar("Black");
 
     delete pSilverCar;
+    outputCount();
     delete pBlackCar;
+    outputCount();
 
     return 0;
 }
